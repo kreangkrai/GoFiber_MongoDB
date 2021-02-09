@@ -66,7 +66,6 @@ func InsertDoc(data Models.DataModel) (*mongo.InsertOneResult, error) {
 	}
 	return res, nil
 }
-
 func UpdateDoc(data Models.DataModel) (*mongo.UpdateResult, error) {
 	ctx, cancel := context.WithTimeout(context.Background(), 3*time.Second)
 	defer cancel()
@@ -84,6 +83,7 @@ func UpdateDoc(data Models.DataModel) (*mongo.UpdateResult, error) {
 	return res, nil
 }
 
+//Delete
 func DeleteDoc(device string) (*mongo.DeleteResult, error) {
 	ctx, cancel := context.WithTimeout(context.Background(), 3*time.Second)
 	defer cancel()
