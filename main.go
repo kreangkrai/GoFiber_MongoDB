@@ -9,33 +9,6 @@ import (
 	"github.com/kriangkrai/GoFiber/Router"
 )
 
-// type MongoInstance struct {
-// 	Client *mongo.Client
-// 	Db     *mongo.Database
-// }
-
-// var mg MongoInstance
-
-// const dbName = "mongodb+srv://Meeci:Meeci50026@meego.biqun.mongodb.net/Mee?retryWrites=true&w=majority"
-
-// func Connect() error {
-// 	client, err := mongo.NewClient(options.Client().ApplyURI(dbName))
-
-// 	ctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
-// 	defer cancel()
-
-// 	err = client.Connect(ctx)
-// 	db := client.Database("Mee")
-
-// 	if err != nil {
-// 		return err
-// 	}
-// 	mg = MongoInstance{
-// 		Client: client,
-// 		Db:     db,
-// 	}
-// 	return nil
-// }
 func main() {
 
 	if err := Controller.Connect(); err != nil {
@@ -55,8 +28,7 @@ func main() {
 	app.Listen(":3000")
 	var port = os.Getenv("PORT")
 	if port == "" {
-		port = "3000"
-		//fmt.Println("No Port In Heroku" + port)
+		port = "8080"
 	}
 
 	log.Fatal(app.Listen(port))
