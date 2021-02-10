@@ -28,7 +28,7 @@ func main() {
 	app.Listen(":3000")
 	var port = os.Getenv("PORT")
 	if port == "" {
-		port = "8080"
+		port = "3000"
 	}
 
 	log.Fatal(app.Listen(port))
