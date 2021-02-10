@@ -25,11 +25,10 @@ func main() {
 	v1.Put("/update", Router.Update)
 	v1.Delete("/delete/:device", Router.Delete)
 
-	app.Listen(":3000")
 	var port = os.Getenv("PORT")
 	if port == "" {
-		port = "3000"
+		port = "8080"
 	}
-
-	log.Fatal(app.Listen(port))
+	app.Listen(":" + port)
+	//log.Fatal(app.Listen(port))
 }
